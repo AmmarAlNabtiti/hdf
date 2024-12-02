@@ -1,0 +1,58 @@
+.modalComponent {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  .backdrop {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.25);
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+
+    animation-name: fadeIn;
+    animation-duration: 0.8s;
+    animation-timing-function: cubic-bezier(0, 0.75, 0, 1);
+  }
+
+  .modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    min-width: 300px;
+
+    animation-name: slideIn;
+    animation-duration: 0.4s;
+    animation-timing-function: cubic-bezier(0, 0.75, 0, 1);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    top: 0;
+    transform: translate(-50%, -100%);
+  }
+  to {
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  to {
+    background-color: rgba(0, 0, 0, 0.25);
+  }
+}
